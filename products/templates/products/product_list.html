@@ -4,7 +4,13 @@
 <ul>
     {% for product in products %}
         <li>
-            <a href="{{ product.get_absolute_url }}">{{ product.name }}</a> - ${{ product.price }}
+            <div>
+                <a href="/{{ product.slug }}/">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    {{ product.name }}
+                    <p>KES &nbsp; {{ product.price }}</p> 
+                </a> 
+            </div>
         </li>
     {% endfor %}
 </ul>

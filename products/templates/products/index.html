@@ -12,10 +12,10 @@
         <ul>
             {% for product in featured_products %}
                 <li>
-                    <a href="/products/{{ product.slug }}/">
+                    <a href="/{{ product.slug }}/">
                         <img src="{{ product.image.url }}" alt="{{ product.name }}">
                         <p>{{ product.name }}</p>
-                        <p>${{ product.price }}</p>
+                        <p>KES &nbsp; {{ product.price }}</p>
                     </a>
                 </li>
             {% empty %}

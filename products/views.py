@@ -12,12 +12,12 @@ def index(request):
 def product_list(request):
     """View function for the list of products."""
     products = Product.objects.filter(is_active=True)
-    context = {'products', products}
+    context = {'products': products}
     return render(request, 'products/product_list.html', context)
 
 
 def product_detail(request, slug):
     """View function for the deatils about ab specific product."""
-    product = get_object_or_404(Product, slug-slug)
+    product = get_object_or_404(Product, slug=slug)
     context = {'product': product}
     return render(request, 'products/product_detail.html', context)
